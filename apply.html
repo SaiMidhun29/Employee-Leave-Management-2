@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apply for Leave</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="app-header">
+      <div class="brand">
+        <div class="logo">LM</div>
+        <div>
+          <div style="font-size:14px;color:#0b1220;font-weight:800">Apply for Leave</div>
+          <div class="small">Submit a new leave request</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="dashboard.html">Dashboard</a>
+      </div>
+    </div>
+
+    <div class="grid-two">
+      <main>
+        <div class="panel form-card">
+          <label class="small">Leave Type</label>
+          <select id="leaveType" class="select" aria-label="Leave type">
+            <option>ANNUAL — 12.5 left</option>
+            <option>SICK — 8 left</option>
+            <option>CASUAL — 2 left</option>
+            <option>COMPOFF — 1 left</option>
+            <option>OPTIONAL — 3 left</option>
+          </select>
+
+          <div class="form-row" style="margin-top:12px">
+            <div style="flex:1">
+              <label class="small">From</label>
+              <input id="startDate" type="date" class="input" />
+            </div>
+            <div style="flex:1">
+              <label class="small">To</label>
+              <input id="endDate" type="date" class="input" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div style="flex:1">
+              <label class="small">Half-day</label>
+              <select class="select"><option>None</option><option>First Half</option><option>Second Half</option></select>
+            </div>
+            <div style="flex:1">
+              <label class="small">Attachment</label>
+              <input type="file" class="input" />
+            </div>
+          </div>
+
+          <label class="small">Reason</label>
+          <textarea class="input" rows="4"></textarea>
+
+          <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:12px">
+            <a class="btn btn-ghost" href="dashboard.html">Cancel</a>
+            <button class="btn btn-primary" onclick="openModal('confirmModal'); updateConfirmPreview();">Review & Submit</button>
+          </div>
+        </div>
+      </main>
+
+      <aside class="panel">
+        <h3>Balance Snapshot</h3>
+        <div class="small" style="margin-top:8px">Annual: 12.5 days</div>
+        <div class="small">Sick: 8 days</div>
+        <div style="margin-top:10px">
+          <div class="small"><strong>Note:</strong> Weekends and holidays will be excluded from deduction where applicable.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Confirm modal -->
+  <div id="confirmModal" class="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3>Confirm Leave Request</h3>
+      <div class="row kv"><div class="small">Type</div><div id="kv-type">—</div></div>
+      <div class="row kv"><div class="small">Dates</div><div id="kv-dates">—</div></div>
+      <div class="row kv"><div class="small">Total Days</div><div id="kv-days">—</div></div>
+      <div class="row kv"><div class="small">Manager</div><div>Ravi Kumar</div></div>
+
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:12px">
+        <button class="btn btn-ghost" onclick="closeModal('confirmModal')">Edit</button>
+        <button class="btn btn-primary" onclick="submitApplySim()">Confirm & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

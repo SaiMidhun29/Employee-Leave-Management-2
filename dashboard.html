@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard — Leave Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="app-header">
+      <div class="brand">
+        <div class="logo">LM</div>
+        <div>
+          <div style="font-size:14px;color:#0b1220;font-weight:800">Leave Dashboard</div>
+          <div class="small">Overview of balances & recent requests</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="history.html">My Leaves</a>
+        <a class="btn btn-primary" href="apply.html">Apply for Leave</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-left">
+        <h1>Your time off — at a glance</h1>
+        <p class="small">Quick summary of your leave balances and recent activity.</p>
+        <div class="metrics" style="margin-top:12px">
+          <div class="metric"><div class="label">Annual Leave</div><div class="value">12.5</div><div class="sub small">days remaining</div></div>
+          <div class="metric"><div class="label">Sick Leave</div><div class="value">8</div><div class="sub small">days remaining</div></div>
+          <div class="metric"><div class="label">Casual Leave</div><div class="value">2</div><div class="sub small">days remaining</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <a class="btn" href="pending.html">Manager View</a>
+        <a class="fab" href="apply.html" title="Apply for Leave">+</a>
+      </div>
+    </div>
+
+    <div class="grid-two">
+      <div>
+        <div class="panel">
+          <h3>Recent Activity</h3>
+          <div class="table-wrap" style="margin-top:12px">
+            <table class="table">
+              <thead>
+                <tr><th>Type</th><th>Date Range</th><th>Days</th><th>Status</th><th>Submitted</th></tr>
+              </thead>
+              <tbody>
+                <tr id="L-1001"><td>ANNUAL</td><td>2026-01-10 — 2026-01-12</td><td>3</td><td><span class="badge badge-pending">PENDING</span></td><td class="small">2025-12-11</td></tr>
+                <tr id="L-1002"><td>SICK</td><td>2025-11-20 — 2025-11-21</td><td>1.5</td><td><span class="badge badge-approved">APPROVED</span></td><td class="small">2025-11-18</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <h3>Notifications</h3>
+          <div class="small">No pending actions — you're all set for this month.</div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h3>Leave Policy Snapshot</h3>
+        <div class="small" style="margin-top:10px">Sick leave beyond 2 days requires attachment. Weekends & public holidays are handled per company policy.</div>
+        <div style="margin-top:12px">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(90deg,#0B5FFF,#047857);display:grid;place-items:center;color:#fff;font-weight:700">H</div>
+            <div>
+              <div style="font-weight:700">Jan 26, 2026</div>
+              <div class="small">Republic Day</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
